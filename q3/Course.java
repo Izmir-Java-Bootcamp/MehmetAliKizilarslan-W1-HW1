@@ -67,25 +67,15 @@ public class Course {
 
 
     public boolean dropStudent(Student oldStudent){
-        for(int i = 0 ; i < this.students.length; i++){
+        for(int i = 0 ; i < this.numberOfStudent; i++){
             if(oldStudent.getStudentId() == this.students[i].getStudentId()) //searching student
             {
-                Student[] newStdList = new Student[this.students.length -1];
-
-                for(int j = 0 ; j < this.students.length ;j++){
-                    newStdList[j] = this.students[j];
-                    if(j == i)
-                        j++; //dropped student
-                }
-                this.students = new Student[newStdList.length];
-
-                System.arraycopy(newStdList, 0, this.students, 0, this.students.length);
+                //copying the same array without the old student
+                System.arraycopy(this.students, i+1, this.students,i,this.numberOfStudent-i);
 
                 this.numberOfStudent--;
                 return true;
-
             }
-
         }
         return false;
     }

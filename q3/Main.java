@@ -32,10 +32,37 @@ public class Main {
         //step7 All students of K129 are printed on the screen.
         cK129.list();
 
-        //step8
+        //step8 Student with ID 5005 is dropped from K129.
+        cK129.dropStudent(s1); // the method is asking for a Student object but the mission is asking to integer
 
-        
+        //step9 All students of K129 are printed on the screen.
 
+        //step10 Number of students enrolled to K129 is printed.
+
+        //step11 Birth year of best student of K129 is printed on the screen.
+        // (You should use - getYear() method of java.util.Date class.)
+
+        //step12 A new course (let us call it K130) is created.
+        Course cK130 = new Course("K130");
+        //step13 All students currently enrolled in K129 are added to K130.
+        // (You should use - getStudents() method).
+
+        //step14 All students of K129 are removed from the course.
+
+        //step15 Student with ID 5005 is dropped from K129 and result
+        // of the operation is printed - on the screen.
+
+        //step16 All students of K130 are printed on the screen.
+
+        //step17 Best student of K130 is dropped from K130.
+
+        //step18 All students of K130 are printed on the screen.
+
+        //step19 GPA of youngest student of K130 is printed on the screen.
+
+        //step20 Courses K129 and K130 are printed on the screen.
+        cK129.list();
+        cK130.list();
 
     }
 }
