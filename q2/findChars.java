@@ -1,4 +1,4 @@
-package week1.hw1.q2;
+package week1.hw1.git.q2;
 
 
 import java.util.Scanner;

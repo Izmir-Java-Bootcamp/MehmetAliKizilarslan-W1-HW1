@@ -1,4 +1,4 @@
-package week1.hw1.q3;
+package week1.hw1.git.q3;
 
 public class Student {
     private String name;
