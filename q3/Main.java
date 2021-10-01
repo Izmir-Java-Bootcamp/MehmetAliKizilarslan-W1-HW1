@@ -20,18 +20,20 @@ public class Main {
         cK129.addStudent(s3);
         cK129.addStudent(s4);
 
+        //System.out.println(cK129.getBestStudent());
         //step 4
         cK129.list();
 
         //step 5
         cK129.increaseCapacity();
 
+
         //step 6
         cK129.addStudent(s4);
         cK129.addStudent(s5);
 
         //step7
-        //cK129.list();
+        cK129.list();
 
 
 

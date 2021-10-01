@@ -6,7 +6,7 @@ public class Course {
     private String name;
     private Student[] students;
     private int capacity;
-    private int numberOfStudent;
+    private int numberOfStudent=0;
 
     public Course(String name) {
         this.name = name;
@@ -53,15 +53,11 @@ public class Course {
     }
 
     public boolean addStudent(Student newStudent){
-        if((getNumberOfStudent()) < capacity){
-            Student[] oldStdList = new Student[this.students.length];
+        //check for same student with loop
+        if((getNumberOfStudent()) < this.capacity ){
 
-            System.arraycopy(this.students, 0, oldStdList, 0, this.students.length);
 
-            this.students = new Student[this.students.length+1];
-
-            System.arraycopy(oldStdList, 0, this.students, 0, oldStdList.length);
-            this.students[this.students.length -1] = newStudent;
+            this.students[numberOfStudent] = newStudent;
 
             this.numberOfStudent++;
             return true; //if student added
@@ -97,6 +93,16 @@ public class Course {
 
     public void increaseCapacity(){
         this.capacity += 5;
+        Student[] stds = new Student[this.capacity];
+
+        for(int i = 0 ; i < this.numberOfStudent;i++){
+            stds[i] = this.students[i];
+        }
+
+        this.students = new Student[this.capacity];
+        for(int i = 0 ; i < this.numberOfStudent;i++){
+            this.students[i] = stds[i];
+        }
     }
 
     public Student getBestStudent(){
@@ -129,7 +135,7 @@ public class Course {
     }
 
     public void list(){// prints all students enrolled to the course to the screen.
-        for(int i = 0 ; i < students.length ; i++)
+        for(int i = 0 ; i < getNumberOfStudent() ; i++)
             System.out.println(this.students[i].getName());
     }
     /*
